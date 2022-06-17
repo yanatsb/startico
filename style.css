@@ -990,14 +990,14 @@ body{
 .burger__button span::after {       
   transform: translateY(20px);     
 }
-.header__menu-active span {         
+.header__list active span {         
   height: 0;
 }
-.header__menu-active span:before {  
+.header__list active span:before {  
   transform: rotate(45deg);
   background-color: #FF1744;
 }
-.header__menu-active span:after { 
+.header__menu active span:after { 
   transform: rotate(-45deg);
   background-color: #FF1744;
 }
