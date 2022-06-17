@@ -18,3 +18,8 @@
 	menu.classList.toggle('active');
   menuBtn.classList.toggle('active');
 });
+
+let close = document.querySelector('.cross');
+close.addEventListener('click', function (){
+close.classList.toggle('active');
+})
