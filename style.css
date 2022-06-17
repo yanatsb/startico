@@ -929,7 +929,7 @@ body{
   }
 }
 @media (max-width:800px){
-  .header__menu {
+  .header__list {
     position: fixed;
     z-index: 10;
     right: 0;
@@ -943,7 +943,7 @@ body{
     transition: 1s;                   
     transform: translateX(100%);      
   }
-  .header__menu-active {
+  .header__list .active {
     transform: translateX(0%);
   }
   .header__list {
@@ -990,14 +990,14 @@ body{
 .burger__button span::after {       
   transform: translateY(20px);     
 }
-.header__list active span {         
+.header__list .active span {         
   height: 0;
 }
-.header__list active span:before {  
+.header__list .active span:before {  
   transform: rotate(45deg);
   background-color: #FF1744;
 }
-.header__menu active span:after { 
+.header__list .active span:after { 
   transform: rotate(-45deg);
   background-color: #FF1744;
 }
