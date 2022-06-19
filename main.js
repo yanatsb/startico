@@ -19,7 +19,7 @@
   menuBtn.classList.toggle('active');
 });
 
-let close = document.querySelector('.cross');
+let close = document.querySelector('.header__top');
 close.addEventListener('click', function (){
 close.classList.toggle('active');
 })

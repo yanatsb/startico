@@ -88,6 +88,9 @@ body{
 .cross::after {
 	transform: rotate(-45deg);
 }
+.header__top.active{
+  display: none;
+}
 .header__container{
   display: flex;
   justify-content: space-between;
@@ -106,8 +109,10 @@ body{
 }
 .header__link{
   color: var(--main-color-dark);
-  margin-right: 32px;
   transition: all .5s;
+}
+.header__item:not(:last-child){
+  margin-right: 32px;
 }
 .header__link:hover{
   text-decoration: underline;
@@ -223,7 +228,7 @@ body{
   background-position: right;
   margin-bottom: 128px;
 }
-.speed__wrapper{
+.speed__container{
   padding-top: 700px;
   display: flex;
   justify-content: space-between;
@@ -255,10 +260,8 @@ body{
   font-size: 32px;
   line-height: 42px;
 }
-.speed__note{
-  max-width: 72px;
-}
 .note{
+  display: inline-block;
   font-weight: 700;
   font-size: 15px;
   line-height: 24px;
@@ -345,7 +348,6 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   gap: 31px;
   margin-bottom: 48px;
 }
@@ -392,9 +394,6 @@ body{
   gap: 81px;
   margin-bottom: 128px;
 }
-.efficient__note{
-  max-width: 88px;
-}
 .efficient__subtitle{
   margin-bottom: 38px;
 }
@@ -423,6 +422,7 @@ body{
 .efficient__path{
   display: flex;
   justify-content: space-between;
+  gap: 55px;
   background-color: var(--main-color-light);
   border-radius: 24px;
   padding: 24px;
@@ -483,10 +483,7 @@ body{
 }
 .pricing{
   margin-bottom: 128px;
-}
-.pricing__note{
-  max-width: 77px;
-  margin: 0 auto;
+  text-align: center;
 }
 .pricing-title{
   line-height: 58px;
@@ -517,6 +514,7 @@ body{
   background-image: url(img/pricing1.svg);
   background-repeat: no-repeat;
   background-position: right 31px top 32px;
+  text-align: left;
 }
 .pricing__card:nth-child(even){
   margin-top: -64px;
@@ -579,7 +577,7 @@ body{
 .pricing__btn{
   display: flex;
   justify-content: center;
-  padding: 14px 127px;
+  padding: 14px;
   background-color: var(--main-color-light);
   border: 2px solid #DDF0A7;
   border-radius: 64px;
@@ -629,10 +627,7 @@ body{
 }
 .blog{
   margin-bottom: 142px;
-}
-.blog__note{
-  max-width: 59px;
-  margin: 0 auto 15px;
+  text-align: center;
 }
 .blog__title{
   font-family: 'Fraunces';
@@ -780,6 +775,7 @@ body{
   height: 52px;
   padding: 13px 42px;
   margin-right: 16px;
+  cursor: pointer;
 }
 .form-mail::placeholder{
   font-family: 'Space Grotesk';
@@ -806,12 +802,6 @@ body{
 .button:hover{
   background-color: var(--color-font);
   color: var(--main-color-dark);
-
-}
-.subscription__note{
-  font-size: 11px;
-  line-height: 18px;
-  text-align: center;
 }
 .footer{
   background-color: var(--main-color-dark);
@@ -837,6 +827,11 @@ body{
   justify-content: space-between;
   gap: 130px;
 }
+.footer__menu-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 .footer__list{
   list-style: none;
 }
@@ -845,7 +840,8 @@ body{
   line-height: 21px;
   margin-bottom: 16px;
  }
-.footer__item:first-child{
+ .footer__title{
+  font-weight: 400;
   font-size: 15px;
   line-height: 24px;
   margin-bottom: 24px;
@@ -862,6 +858,7 @@ body{
 .footer__bottom{
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 }
 .footer__social-network{
   display: flex;
@@ -873,7 +870,15 @@ body{
 .footer__social-network-link:hover svg path:first-child{
   fill: var(--color-font);
 }
-
+@media (max-width:1215px){
+  .pricing__cards{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .pricing__card:nth-child(even) {
+    margin-top: 0;
+  }
+}
 @media (max-width:1100px){
   .efficient__cards{
     flex-wrap: wrap;
@@ -899,7 +904,7 @@ body{
 }
 
 @media (max-width:957px){
-  .speed__wrapper{
+  .speed__container{
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -925,13 +930,6 @@ body{
   }
   .footer__menu{
     gap: 40px;
-  }
-  .pricing__cards{
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .pricing__card:nth-child(even) {
-    margin-top: 0;
   }
 }
 @media (max-width:800px){
@@ -1024,6 +1022,43 @@ body{
   .reviews{
     padding: 70px 30px;
   }
+  .speed__path{
+    right: 0px;
+  }
+  .efficient__path{
+    left: 0px;
+  }
 }
+@media (max-width:480px){
+  .benefits__container{
+    padding: 127px 30px;
+  }
+  .reviews{
+    padding: 70px 20px;
+  }
+  .subscription__wrapper{
+    padding: 64px 30px 30px;
+  }
+  .form{
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .form-mail{
+    margin-right: 0;
+  }
+  .form-mail::placeholder{
+    text-align: center;
+  }
+  .speed__path,
+  .efficient__path{
+    gap: 5px;
+    position: relative;
+    bottom: 0;
+    padding: 20px;
+  }
+  .burger__button{
+    left: -230px;
+  }
 
+}
 
